@@ -1,0 +1,104 @@
+:root {
+    --white: #F7F7F7;
+    --lightblue: #BAE0ED;
+    --darkcyan: #73A9B2;
+    --cyan: #41C1BA;
+    --darkblue: #365B6D;
+    --darkblue2: #4E5272;
+}
+
+main {
+    background-color: var(--darkcyan);
+    height: calc(100vh - 90px);
+    width: 100vw;
+}
+
+form {
+    background-color: var(--white);
+    height: calc(100vh - 150px);
+    width: 100vw;
+    display: flex;
+}
+
+form > div {
+    width: 50%;
+}
+
+form > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+form > div:nth-child(1) > span {
+    height: 60px;
+    margin-bottom: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--darkblue);
+}
+
+form > div:nth-child(1) > span label {
+    color: var(--darkcyan);
+    font-weight: bold;
+}
+
+form > div:nth-child(1) > span input {
+    height: 30px;
+    border: none;
+    background-color: var(--darkblue);
+    border-bottom: 3px solid var(--darkcyan);
+    color: var(--white);
+    font-weight: bold;
+}
+
+form > div:nth-child(1) > span:nth-child(3) > span {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+
+form > div:nth-child(1) > span:nth-child(3) > span > label  {
+    width: 200px;
+    height: 20px;
+    margin-top: 6px;
+}
+
+form > div:nth-child(1) > span:nth-child(3) > span > span {
+    margin-right: 50px;
+    
+    display: flex;
+}
+
+form > div:nth-child(1) > span:nth-child(3) > span > span label {
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+form > div:nth-child(2) {
+    display: flex;
+}
+
+form > div:nth-child(2) span {
+    width: 50%;
+    padding: 80px 10px;
+}
+
+form > div:nth-child(2) img {
+    width: 200px;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+}
+
+form > div:nth-child(2) span > label {
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    
+    width: 140px;
+}
+
+
+

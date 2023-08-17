@@ -10,46 +10,6 @@
     --darkblue2: #4E5272;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Anton', sans-serif;
-}
-
-html, body {
-    width: 100vw;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-header {
-    border-bottom: 5px solid var(--darkblue);
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    padding-top: 15px;
-}
-
-header > div {
-    margin: 0 20px;
-}
-
-header div#logo img {
-    width: 200px;
-}
-header div#icons div {
-    display: inline-block;
-}
-
-header div#icons div a img {
-    width: 50px;
-}
-
-header img {
-    cursor: pointer;
-}
-
 main section {
     height: 100vh;
     width: 100vw;
