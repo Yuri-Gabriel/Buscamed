@@ -6,16 +6,18 @@
     --darkblue: #365B6D;
     --darkblue2: #4E5272;
 }
+html, body {
+    overflow: hidden;
+}
 
 main {
-    background-color: var(--darkcyan);
-    height: calc(100vh - 90px);
     width: 100vw;
+    height: calc(100vh - 90px);
+    background-color: var(--darkcyan);
 }
 
 form {
     background-color: var(--white);
-    height: calc(100vh - 150px);
     width: 100vw;
     display: flex;
 }
@@ -28,6 +30,7 @@ form > div:nth-child(1) {
     display: flex;
     flex-direction: column;
     padding: 50px;
+    padding-bottom: 20px;
 }
 
 form > div:nth-child(1) > span {
@@ -78,6 +81,22 @@ form > div:nth-child(1) > span:nth-child(3) > span > span label {
 
 form > div:nth-child(2) {
     display: flex;
+    flex-direction: column;
+}
+
+form > div:nth-child(2) > input {
+    padding: 10px;
+    width: 150px;
+    margin: -50px auto 50px auto;
+    border: none;
+    background-color: var(--darkblue);
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form > div:nth-child(2) > div {
+    display: flex;
 }
 
 form > div:nth-child(2) span {
@@ -96,9 +115,21 @@ form > div:nth-child(2) span > label {
     margin: 10px auto;
     display: block;
     text-align: center;
-    
     width: 140px;
 }
 
-
+@media screen and (max-width: 850px) {
+    html, body {
+        overflow-y: scroll;
+    }
+    form {
+        flex-direction: column;
+    }
+    form > div {
+        width: 100%;
+    }
+    form > div:nth-child(2) img {
+        width: 150px;
+    }
+}
 
