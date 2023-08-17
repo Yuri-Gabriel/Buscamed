@@ -69,8 +69,8 @@ form > div:nth-child(1) > span:nth-child(3) > span > label  {
 }
 
 form > div:nth-child(1) > span:nth-child(3) > span > span {
-    margin-right: 50px;
-    
+    margin-right: 20px;
+    width: 120px;
     display: flex;
 }
 
