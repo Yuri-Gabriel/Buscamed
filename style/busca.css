@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #F7F7F7;
+    --lightblue: #BAE0ED;
+    --darkcyan: #73A9B2;
+    --cyan: #41C1BA;
+    --darkblue: #365B6D;
+    --darkblue2: #4E5272;
+}
+
+section {
+    width: 100vw;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section > div {
+    width: 700px;
+}
+
+section > div:nth-child(1) {
+    margin-top: 100px;
+    border: 1px solid var(--darkblue);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+section > div:nth-child(1) div {
+    display: flex;
+    justify-content: space-between;
+}
+
+section > div:nth-child(1) div img {
+    width: 10px;
+    cursor: pointer;
+}
+
+section > div:nth-child(1) div img:nth-child(1) {
+    width: 50px;
+}
+section > div:nth-child(1) input {
+    width: 90%;
+    height: 50px;
+    border: none;
+    padding-left: 50px;
+    font-size: 1.3em;
+}
+
+section > div:nth-child(2) {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+section > div:nth-child(2)::-webkit-scrollbar {
+    display: none;
+}
+
+section > div:nth-child(2) div {
+    display: none;
+    width: 80%;
+    height: 50px;
+    padding-top: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: var(--darkblue);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    section > div {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section > div {
+        width: 400px;
+    }
+    section > div:nth-child(1) input {
+        font-size: 1em;
+    }
+}

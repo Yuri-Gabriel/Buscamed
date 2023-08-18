@@ -22,6 +22,7 @@ html, body {
 
 header {
     border-bottom: 5px solid var(--darkblue);
+    height: 100px;
     display: flex;
     justify-content: space-between;
     padding: 5px;
@@ -39,10 +40,25 @@ header div#icons div {
     display: inline-block;
 }
 
+header div#icons div:nth-child(1) a img {
+    width: 70px;
+    margin-right: -10px;
+}
+
 header div#icons div a img {
     width: 50px;
 }
 
 header img {
     cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    header div#icons div:nth-child(1) a img {
+        width: 45px;
+        margin-right: -10px;
+    }
+    header div#icons div a img  {
+        width: 35px;
+    }
 }

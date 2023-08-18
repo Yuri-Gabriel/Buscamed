@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/busca.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Buscamed</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <a href="./index.html">
+                <img src="./img/Logo.png" alt="Logo">
+            </a>
+        </div>
+        <div id="icons">
+            <div>
+                <a href="./busca.html">
+                    <img src="./img/lupa.png" alt="Pesquisa">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="./img/Favoritos.png" alt="Favoritos">
+                </a>
+            </div>
+            <div>
+                <a href="cadastro.html">
+                    <img src="./img/Cadastrar.png" alt="Cadastrar">
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div>
+                <div>
+                    <div>
+                        <img src="./img/lupa.png" alt="lupa" id="lupa">
+                    </div>
+                    <input type="text" placeholder="Digite aqui a especialidade:">
+                    <div>
+                        <img src="./img/x.png" alt="erease" id="apagar">
+                    </div>
+                    
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h1>Dra. Juliana G. Fonseca</h1>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const input = document.querySelector("input");
+        const nome = document.querySelector("section > div:nth-child(2) div h1");
+        const medico = document.querySelector("section > div:nth-child(2) div");
+        const pesquisar = document.querySelector("#lupa")
+        const apagar = document.querySelector("#apagar");
+        
+        input.addEventListener("keyup", () => {
+            var value = input.value.toLowerCase();
+            
+            if ("neurologista".includes(value) && value != "") {
+                medico.style.display = "block";
+                medico.style.backgroundColor = "#365B6D";
+                medico.style.color = "#FFFFFF";
+                nome.innerHTML = "Dra. Juliana G. Fonseca";
+                medico.addEventListener("click", () => {
+                    window.location = "./consulta.html"
+                });
+            } else if ("neurologista".includes(value) == false && value != "") {
+                medico.style.display = "block";
+                medico.style.backgroundColor = "#FFFFFF";
+                medico.style.color = "#000000";
+                nome.innerHTML = "Nada encontrado";
+            } else {
+                medico.style.display = "none";
+            }
+        });
+
+        pesquisar.addEventListener("click", () => {
+            if (input.value == "") {
+                medico.style.display = "block";
+                nome.innerHTML = "Digite algo";
+                medico.style.backgroundColor = "#FFFFFF";
+                medico.style.color = "#000000";
+            }
+        });
+
+        apagar.addEventListener("click", () => {
+            input.value = "";
+            medico.style.display = "none";
+        });
+    </script>
+</body>
+</html>
