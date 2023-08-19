@@ -54,6 +54,9 @@ header img {
 }
 
 @media screen and (max-width: 450px) {
+    header div#logo img {
+        width: 150px;
+    }
     header div#icons div:nth-child(1) a img {
         width: 45px;
         margin-right: -10px;

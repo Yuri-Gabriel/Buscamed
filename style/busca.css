@@ -13,7 +13,11 @@
     --darkblue2: #4E5272;
 }
 
-section {
+main {
+    position: relative;
+}
+
+section:nth-child(1) {
     width: 100vw;
     min-height: calc(100vh - 100px);
     display: flex;
@@ -21,31 +25,31 @@ section {
     flex-direction: column;
 }
 
-section > div {
+section:nth-child(1) > div {
     width: 700px;
 }
 
-section > div:nth-child(1) {
+section:nth-child(1) > div:nth-child(1) {
     margin-top: 100px;
     border: 1px solid var(--darkblue);
     border-radius: 10px;
     padding: 5px;
 }
 
-section > div:nth-child(1) div {
+section:nth-child(1) > div:nth-child(1) div {
     display: flex;
     justify-content: space-between;
 }
 
-section > div:nth-child(1) div img {
+section:nth-child(1) > div:nth-child(1) div img {
     width: 10px;
     cursor: pointer;
 }
 
-section > div:nth-child(1) div img:nth-child(1) {
+section:nth-child(1) > div:nth-child(1) div img:nth-child(1) {
     width: 50px;
 }
-section > div:nth-child(1) input {
+section:nth-child(1) > div:nth-child(1) input {
     width: 90%;
     height: 50px;
     border: none;
@@ -53,16 +57,16 @@ section > div:nth-child(1) input {
     font-size: 1.3em;
 }
 
-section > div:nth-child(2) {
+section:nth-child(1) > div:nth-child(2) {
     height: 250px;
     overflow-y: scroll;
 }
 
-section > div:nth-child(2)::-webkit-scrollbar {
+section:nth-child(1) > div:nth-child(2)::-webkit-scrollbar {
     display: none;
 }
 
-section > div:nth-child(2) div {
+section:nth-child(1) > div:nth-child(2) div {
     display: none;
     width: 80%;
     height: 50px;
@@ -73,6 +77,25 @@ section > div:nth-child(2) div {
     color: #FFFFFF;
     background-color: var(--darkblue);
     cursor: pointer;
+}
+
+section#calendario {
+    position: absolute;
+    width: 100vw;
+    min-height: calc(100vh - 100px);
+    border: 2px solid red;
+    top: 0;
+    display: flex;
+}
+
+div#calendar {
+    border: 2px solid green;
+    width: 60%;
+}
+
+div#perfil {
+    border: 2px solid blue;
+    width: 40%;
 }
 
 @media screen and (max-width: 700px) {
@@ -87,5 +110,21 @@ section > div:nth-child(2) div {
     }
     section > div:nth-child(1) input {
         font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    section > div {
+        width: 300px;
+    }
+    section > div:nth-child(1) input {
+        padding-left: 0px;
+        font-size: 0.9em;
+    }
+    section > div:nth-child(1) div img:nth-child(1) {
+        width: 40px;
+    }
+    section > div:nth-child(2) div {
+        width: 100%;
     }
 }
