@@ -85,9 +85,15 @@
                         </label>
                     </span>
                 </div>
-                <input type="button" value="Cadastrar">
+                <input type="button" value="Cadastrar" id="cadastrar">
             </div>
         </form>
     </main>
+    <script>
+        const btnCadastrar = document.querySelector("input#cadastrar");
+        btnCadastrar.addEventListener("click", () => {
+            window.location.href = "./busca.html"
+        })
+    </script>
 </body>
 </html>
