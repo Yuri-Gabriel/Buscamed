@@ -54,29 +54,46 @@
         </section>
         <section id="calendario">
             <div id="calendar">
-
+                <div>
+                    <img src="./img/1calendario.JPG" alt="calendario">
+                </div>
+                <div id="day" >
+                    <div>
+                        <h3>
+                            SELECIONE O DIA:
+                        </h3>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>08:10</li>
+                            <li>09:10</li>
+                            <li>10:10</li>
+                            <li>11:10</li>
+                            <li>13:10</li>
+                        </ul>
+                    </div>
+                    <button>
+                        Selecione um horario
+                    </button>
+                </div>
             </div>
             <div id="perfil">
                 <div>
-                    <img src="" alt="">
+                    <img src="./img/back.png" alt="back">
                 </div>
                 <div>
                     <p>
                         Medica neurologista formada na UFBA, turma de 2013.
                         Pós graduada na USP, turma de 2021.
                     </p>
-                    <img src="" alt="">
+                    <img src="./img/perfil.png" alt="perfil">
                 </div>
                 <div>
                     <p>
-                        Endereço
+                        Endereço: <br>
+                        Parque Santana, Serrinha - BA, 48700-000
                     </p>
-                    <img src="" alt="">
-                </div>
-                <div>
-                    <button>
-                        Agende agora
-                    </button>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7814.7842587805!2d-39.01509750727826!3d-11.666597439977725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7138d180ffa100f%3A0xe84eaceb7c10a8e4!2sEst%C3%A1dio%20Municipal%20Mariano%20Santana!5e0!3m2!1spt-BR!2sbr!4v1692573611779!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -87,6 +104,15 @@
         const medico = document.querySelector("section > div:nth-child(2) div");
         const pesquisar = document.querySelector("#lupa")
         const apagar = document.querySelector("#apagar");
+        const calendario = document.querySelector("section#calendario");
+        const pesquisa = document.querySelector("section:nth-child(1)");
+        const perfilBack = document.querySelector("div#perfil > div:nth-child(1) img");
+        const imgCalendario = document.querySelector("div#calendar > div:nth-child(1) img");
+        const selectHour = document.querySelector("div#calendar > div:nth-child(2)");
+        const selectHourTitle = document.querySelector("div#calendar > div:nth-child(2) div:nth-child(1) h3");
+        const selectHourList = document.querySelector("div#calendar > div:nth-child(2) div:nth-child(2) ul")
+        const selectHourListHours = document.querySelectorAll("div#calendar > div:nth-child(2) div:nth-child(2) ul li");
+        const buttonAgendar = document.querySelector("div#calendar > div:nth-child(2)  button");
         
         input.addEventListener("keyup", () => {
             var value = input.value.toLowerCase();
@@ -96,9 +122,6 @@
                 medico.style.backgroundColor = "#365B6D";
                 medico.style.color = "#FFFFFF";
                 nome.innerHTML = "Dra. Juliana G. Fonseca";
-                medico.addEventListener("click", () => {
-                    window.location = "./consulta.html"
-                });
             } else if ("neurologista".includes(value) == false && value != "") {
                 medico.style.display = "block";
                 medico.style.backgroundColor = "#FFFFFF";
@@ -121,6 +144,40 @@
         apagar.addEventListener("click", () => {
             input.value = "";
             medico.style.display = "none";
+        });
+
+        medico.addEventListener("click", () => {
+            if (nome.innerHTML == "Dra. Juliana G. Fonseca") {
+                calendario.style.display = "flex";
+                pesquisa.style.display = "none";
+            }
+        });
+
+        imgCalendario.addEventListener("click", () => {
+            imgCalendario.setAttribute("src", "./img/calendario.JPG");
+            selectHourTitle.innerHTML = "16 de julho:"
+            selectHourList.style.display = "block";
+            selectHourListHours.forEach((hour) => {
+                hour.addEventListener("click", () => {
+                    selectHourListHours.forEach((hours) => {
+                        hours.style.background = "#70B873"
+                    });
+                    hour.style.backgroundColor = "#D3D1D1"
+                    buttonAgendar.innerHTML = "Agendar";
+                });
+            })
+        });
+
+        buttonAgendar.addEventListener("click", () => {
+            if(buttonAgendar.innerHTML == "Agendar") {
+                alert("Agendamento concluido");
+                window.location.reload();
+            }
+        });
+
+        perfilBack.addEventListener("click", () => {
+                calendario.style.display = "none";
+                pesquisa.style.display = "flex";
         });
     </script>
 </body>
